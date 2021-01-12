@@ -1,0 +1,31 @@
+
+コントローラ編
+
+1. SampleController を Spring管理のクラスとしてください。
+   (何か、Springのアノテーションを付けます。)
+
+2. getProc メソッドを作成してください。
+このメソッドは、getリクエストのときに動作するメソッドにしたいです。
+中身はからっぽでおk。
+
+
+3. postProc メソッドを作成してください。
+このメソッドは、getリクエストのときに動作するメソッドにしたいです。
+中身はからっぽでおk。
+
+
+
+サービス編
+1. /newcommer2020/src/main/java/jp/co/wisdom/newcommer2020/service/sampleest
+   パッケージを作成して、その下にSampleRestService を作成してください。
+
+   そのクラスをSpring管理のクラスとしてください。
+   (何か、Springのアノテーションを付けます。)
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+package jp.co.wisdom.newcommer2020.service;
