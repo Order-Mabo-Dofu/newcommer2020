@@ -2,17 +2,32 @@
 コントローラ編
 
 1. SampleController を Spring管理のクラスとしてください。
-   (何か、Springのアノテーションを付けます。)
+(何か、Springのアノテーションを付けます。
+
+https://spring.io/guides/gs/rest-service/ を参考にしてください。
+
 
 2. getProc メソッドを作成してください。
+
 このメソッドは、getリクエストのときに動作するメソッドにしたいです。
-中身はからっぽでおk。
+
+ロジックとしては、
+https://spring.io/guides/gs/rest-service/ を参考にして、http://localhost:8080/greeting を実行すると
+
+{"id":9,"content":"Hello, World!"}
+
+って、jsonが戻ってくるようにしたいです。
+
+
+Greetingクラスは、
+/newcommer2020/src/main/java/jp/co/wisdom/newcommer2020/controller/
+にbeanパッケージ配下に作成してください。
+
 
 
 3. postProc メソッドを作成してください。
 このメソッドは、getリクエストのときに動作するメソッドにしたいです。
 中身はからっぽでおk。
-
 
 
 サービス編
