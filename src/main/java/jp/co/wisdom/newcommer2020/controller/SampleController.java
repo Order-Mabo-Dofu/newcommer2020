@@ -19,11 +19,11 @@ public class SampleController {
 	/**
 	 * あいさつ文
 	 */
-	private final String template = "Hello, World!";
+	private final String template = "Hello, %s!";
 	/**
 	 * 識別子
 	 */
-	private AtomicLong counter = new AtomicLong();
+	private final AtomicLong counter = new AtomicLong();
 
 	/**
 	 * getリクエストのときに動作するメソッド

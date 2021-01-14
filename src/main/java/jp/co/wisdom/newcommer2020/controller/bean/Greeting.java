@@ -1,14 +1,18 @@
 package jp.co.wisdom.newcommer2020.controller.bean;
 
+import lombok.Data;
+
 /**
  * @author s.okada
  * spring リソース表現クラス
  */
+@Data
 public class Greeting
 {
 	/**
 	 * 識別子
 	 */
+
 	private final long id;
 	/**
 	 * あいさつ文
@@ -24,17 +28,4 @@ public class Greeting
 		this.content = content;
 	}
 
-	/**
-	 * @return id
-	 */
-	public long getId() {
-		return id;
-	}
-
-	/**
-	 * @return name
-	 */
-	public String getContent() {
-		return content;
-	}
 }
