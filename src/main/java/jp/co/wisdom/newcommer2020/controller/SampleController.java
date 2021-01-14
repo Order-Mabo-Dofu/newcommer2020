@@ -1,9 +1,7 @@
 package jp.co.wisdom.newcommer2020.controller;
 
-import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import jp.co.wisdom.newcommer2020.controller.bean.Greeting;
 
@@ -16,12 +14,11 @@ public class SampleController {
 	/**
 	 * あいさつ文
 	 */
-	private static final String template = "Hello, %s!";
+	private static final String template = "Hello, World!";
 	/**
 	 * 識別子
 	 */
-	private final AtomicLong counter = new AtomicLong();
-
+	private final int num = 9;
 
 	/**
 	 * getリクエストのときに動作するメソッド
@@ -29,8 +26,8 @@ public class SampleController {
 	 * @return リソース表現
 	 */
 	@GetMapping("/greeting")
-	public Greeting getProc(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+	public Greeting getProc() {
+		return new Greeting(num,template);
 	}
 
 	/**
