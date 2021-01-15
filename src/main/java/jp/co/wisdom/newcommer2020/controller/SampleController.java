@@ -1,8 +1,7 @@
 package jp.co.wisdom.newcommer2020.controller;
 
 
-import java.util.concurrent.atomic.AtomicLong;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,22 +16,19 @@ import jp.co.wisdom.newcommer2020.controller.bean.Greeting;
 public class SampleController {
 
 	/**
-	 * あいさつ文
+	 * 処理用クラスの呼び出し
 	 */
-	private final String template = "Hello, %s!";
-	/**
-	 * 識別子
-	 */
-	private final AtomicLong counter = new AtomicLong();
+	@Autowired
+	private jp.co.wisdom.newcommer2020.service.sampleest.SampleRestService sampleRestService;
 
 	/**
 	 * getリクエストのときに動作するメソッド
 	 * @param name
-	 * @return リソース表現
+	 * @return 画面表示内容
 	 */
 	@GetMapping("/greeting")
-	public Greeting getProc(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+	public Greeting greetingProcess(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return this.sampleRestService.process(name);
 	}
 
 	/**

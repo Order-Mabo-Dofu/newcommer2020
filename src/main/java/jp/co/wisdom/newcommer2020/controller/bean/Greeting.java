@@ -10,22 +10,12 @@ import lombok.Data;
 public class Greeting
 {
 	/**
-	 * 識別子
+	 * 識別子(画面が表示された回数)
 	 */
-
 	private final long id;
 	/**
-	 * あいさつ文
+	 * あいさつ文(String.formatによる変更後)
 	 */
 	private final String content;
-
-	/**
-	 * @param id
-	 * @param content
-	 */
-	public Greeting(long id, String content) {
-		this.id = id;
-		this.content = content;
-	}
 
 }
