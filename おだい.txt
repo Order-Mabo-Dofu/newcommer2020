@@ -37,10 +37,17 @@ Greetingクラスは、
    そのクラスをSpring管理のクラスとしてください。
    (何か、Springのアノテーションを付けます。)
 
+2. SampleRestService に process メソッドを実装してください。
+   コントローラのgreetingで行っている内容を移植してください。
+
+3. SampleRestService を SampleController から実行して同じ動作となるようにしてください。
+   ※SampleRestServiceを new するのではなく インジェクトして使用してください。
 
 
+-------------------------------------------------
+やりたいこと
+・ログインの画面を作ってみたい spring security
 
-
-
+・組み込みDBを入れる。
 
 
