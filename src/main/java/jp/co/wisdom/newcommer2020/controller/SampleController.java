@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import jp.co.wisdom.newcommer2020.controller.bean.Greeting;
+import jp.co.wisdom.newcommer2020.service.sampleest.SampleRestService;
 
 /**
  * @author s.okada
@@ -17,9 +18,13 @@ public class SampleController {
 
 	/**
 	 * 処理用クラスの呼び出し
+	 * コンストラクタインジェクション
 	 */
+	private SampleRestService sampleRestService = new SampleRestService();
 	@Autowired
-	private jp.co.wisdom.newcommer2020.service.sampleest.SampleRestService sampleRestService;
+	public SampleController(SampleRestService sampleRestService){
+		this.sampleRestService = sampleRestService;
+	}
 
 	/**
 	 * getリクエストのときに動作するメソッド
