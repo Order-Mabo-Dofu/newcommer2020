@@ -18,11 +18,9 @@ https://spring.io/guides/gs/rest-service/ を参考にして、http://localhost:
 
 って、jsonが戻ってくるようにしたいです。
 
-
 Greetingクラスは、
 /newcommer2020/src/main/java/jp/co/wisdom/newcommer2020/controller/
 にbeanパッケージ配下に作成してください。
-
 
 
 3. postProc メソッドを作成してください。
@@ -37,11 +35,17 @@ Greetingクラスは、
    そのクラスをSpring管理のクラスとしてください。
    (何か、Springのアノテーションを付けます。)
 
+
 2. SampleRestService に process メソッドを実装してください。
    コントローラのgreetingで行っている内容を移植してください。
 
+
 3. SampleRestService を SampleController から実行して同じ動作となるようにしてください。
    ※SampleRestServiceを new するのではなく インジェクトして使用してください。
+
+
+4．時間帯によって、返却するcontentの内容を変更したいです。
+   朝ならGood morning、昼はHello、夜はGood evening など……
 
 
 -------------------------------------------------
