@@ -8,16 +8,12 @@ import org.springframework.stereotype.Service;
 import jp.co.wisdom.newcommer2020.controller.bean.Greeting;
 
 /**
- * @author s.okada
  * Spring管理のクラス
+ * @author s.okada
  */
 @Service
 public class SampleRestService {
 
-	/**
-	 * あいさつ文用
-	 */
-	private String template = "";
 	/**
 	 * 識別子(画面が表示された回数のカウント用)
 	 */
@@ -34,16 +30,18 @@ public class SampleRestService {
 		LocalDateTime nowDateTime = LocalDateTime.now();
 		//現在時刻(hh)を数値で取得
 		int hour = nowDateTime.getHour();
+		//あいさつ文用
+		String template = "";
 
 		//5時～11時にアクセスした場合
 		if(hour >= 5 && hour < 12){
-				this.template = ("Good morning," + name + "!");
+				template = ("Good morning," + name + "!");
 		//12時～18時にアクセスした場合
 		}else if(hour >= 12 && hour < 19){
-				this.template = ("Hello," + name + "!");
+				template = ("Hello," + name + "!");
 		//19時～4時にアクセスした場合
 		}else{
-				this.template = ("Good evening," + name + "!");;
+				template = ("Good evening," + name + "!");;
 		}
 		//カウントの増加とあいさつ文を返す
 		return new Greeting(counter.incrementAndGet(),template);

@@ -10,8 +10,8 @@ import jp.co.wisdom.newcommer2020.controller.bean.Greeting;
 import jp.co.wisdom.newcommer2020.service.sampleest.SampleRestService;
 
 /**
- * @author s.okada
  * Spring管理のクラス
+ * @author s.okada
  */
 @RestController
 public class SampleController {
@@ -20,7 +20,7 @@ public class SampleController {
 	 * 処理用クラスの呼び出し
 	 * コンストラクタインジェクション
 	 */
-	private SampleRestService sampleRestService = new SampleRestService();
+	private final SampleRestService sampleRestService;
 	@Autowired
 	public SampleController(SampleRestService sampleRestService){
 		this.sampleRestService = sampleRestService;

@@ -3,8 +3,8 @@ package jp.co.wisdom.newcommer2020.controller.bean;
 import lombok.Data;
 
 /**
- * @author s.okada
  * spring リソース表現クラス
+ * @author s.okada
  */
 @Data
 public class Greeting
