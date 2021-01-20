@@ -1,6 +1,8 @@
 package jp.co.wisdom.newcommer2020.controller;
 
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,7 +35,12 @@ public class SampleController {
 	 */
 	@GetMapping("/greeting")
 	public Greeting greetingProcess(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return this.sampleRestService.process(name);
+		//ページにアクセスした時の現在日時情報で初期化されたインスタンスの取得
+		LocalDateTime nowDateTime = LocalDateTime.now();
+		//現在時刻(hh)を数値で取得
+		int hour = nowDateTime.getHour();
+
+		return this.sampleRestService.process(name,hour);
 	}
 
 	/**
