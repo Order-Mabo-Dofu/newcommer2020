@@ -19,18 +19,38 @@ public class SampleRestService {
 	private final AtomicLong counter = new AtomicLong();
 
 	/**
-	 * 画面表示カウントの増加とあいさつ文を時刻に応じたものにする
-	 * @param name
+	 * processメソッドは
+	 * 画面表示カウントの増加とあいさつ文を返却するメソッドです。
+	 *
+	 * 処理詳細：
+	 * ・greetingTimeメソッドであいさつ文の作成
+	 * ・incrementAndGet()でカウントの増加
+	 *
+	 * @param template 作成したあいさつ文
+	 * @param id 識別子(画面が表示された回数のカウント用)
 	 * @return 画面表示内容
 	 */
 	public Greeting process(String name,int hour) {
 
-		//String template = greetingTime(name,hour);
+		//時間帯に応じたあいさつ文の作成
+		String template = greetingTime(name,hour);
+		//画面が表示された回数のカウント増加
+		long id = counter.incrementAndGet();
 
-		//カウントの増加とあいさつ文を返す
-		return new Greeting(counter.incrementAndGet(),greetingTime(name,hour));
+		//画面が表示された回数と時間帯に応じたあいさつ文を返す
+		return new Greeting(id,template);
 	}
 
+	/**
+	 * greetingTimeメソッドは
+	 * あいさつ文をページにアクセスした時間帯に応じたものにして返却するメソッドです。
+	 *
+	 * 処理詳細：
+	 * ・時間帯（朝昼夜）に応じてあいさつ文を変更
+	 *
+	 * @param template あいさつ文用
+	 * @return 時間帯に応じたあいさつ文
+	 */
 	private String greetingTime(String name,int hour) {
 
 		//あいさつ文用
@@ -46,6 +66,7 @@ public class SampleRestService {
 		}else{
 			template = ("Good evening," + name + "!");
 		}
+		//結合したあいさつ文を返す
 		return template;
 	}
 

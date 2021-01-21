@@ -14,7 +14,7 @@ public class Greeting
 	 */
 	private final long id;
 	/**
-	 * あいさつ文(String.formatによる変更後)
+	 * あいさつ文
 	 */
 	private final String content;
 

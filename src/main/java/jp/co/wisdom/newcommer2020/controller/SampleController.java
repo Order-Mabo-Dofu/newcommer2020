@@ -29,8 +29,16 @@ public class SampleController {
 	}
 
 	/**
-	 * getリクエストのときに動作するメソッド
-	 * @param name
+	 * * greetingProcessメソッドは
+	 * getリクエストのときに動作し、
+	 * valueの受け取りとページにアクセスした時刻を受け渡して画面に返却するメソッドです。
+	 *
+	 * 処理詳細：
+	 * ・@RequestParamでvalueの受け取り
+	 * ・現在時刻(hh)を数値で取得
+	 *
+	 * @param name 受け取ったvalue(defaultValue = "World")
+	 * @param hour ページにアクセスした時刻(hh)
 	 * @return 画面表示内容
 	 */
 	@GetMapping("/greeting")
